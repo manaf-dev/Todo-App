@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Add Task</legend>
+        {{ form|crispy }}
+
+        <button type="submit" class="btn">Submit</button>
+        <a href="{% url 'home' %}" class="go-back">Go back</a>
+
+    </fieldset>
+
+    
+</form>
+
+
+{% endblock %}

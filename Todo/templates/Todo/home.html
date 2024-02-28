@@ -1,0 +1,50 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <a href="{% url 'add-task' %}" class="btn home-btn">Add task</a>
+    <table class="task-list" cellspacing="2">
+        <tr class="table-heads">
+            <th class="task-col">Tasks</th>
+            <th class="status-col">Status</th>
+            <th class="action-col">Action</th>
+        </tr>
+        {% for task in tasks %}
+            <tr class="table-data">
+                <td class="task-col"><a href="{% url 'task-detail' pk=task.id %}">{{ task.title }}</a></td>
+                <td class="status-col">
+                    {% if task.is_complete %}
+                        Completed
+                    {% else %}
+                        Pending
+                    {% endif %}
+                </td>
+                <td class="action-col">
+                    <a href="{% url 'delete-task' pk=task.id %}">Delete  |  </a>
+                    <a href="{% url 'edit-task' pk=task.id %}">Edit  |  </a>
+                    {% if task.is_complete %}
+                        <form action="{% url 'task-complete' pk=task.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Mark Complete">
+                        </form>
+                    {% else %}
+                        <form action="{% url 'task-complete' pk=task.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Mark Uncomplete">
+                        </form>
+                    {% endif %}
+                    
+                    
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <div class="get-started">
+        <a href="{% url 'login' %}" class="btn">Sign in to Get Started</a>
+        <p><a href="{% url 'signup' %}">Create an Account</a></p>
+    </div>
+{% endif %}
+
+{% endblock %}

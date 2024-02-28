@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+html {
+    background-color: wheat;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
+header {
+    background-color: aqua;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container {
+    background-color: white;
+    margin: auto;
+    width: 60%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    border-radius: 10px;
+    padding: 30px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.get-started {
+    margin: 50px auto 20px auto;
+    width: fit-content;
+}
+
+.get-started .btn {
+    font-size: 20px;
+}
+
+.get-started p {
+    text-align: center;
+    margin-top: 20px;
+    letter-spacing: 1.5px;
+}
+
+.task-list {
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 7px;
+    background-color: silver;
+}
+
+.task-list .status-col, .task-list .action-col {
+    width: 20%;
+    text-align: center;
+}
+
+
+
+.task-list .task-col {
+    width: 60%;
+    border-right: 1px solid gray;
+}
+
+.task-list td{
+    padding: 10px;
+    background-color: white;
+}
+
+.task-list th {
+    padding: 10px;
+    background-color: antiquewhite;
+}
+
+
+.task-show {
+    margin: auto;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.task-title {
+    border-bottom: 1px solid gray;
+    padding: 15px 0;
+    font-size: 1.3rem;
+}
+
+.task-desc {
+    min-height: 100px;
+    border-bottom: 1px solid black;
+    padding: 20px 10px;
+}
+
+.task-show .task-status {
+    margin: 10px 0 30px 0;
+}
+
+.task-show .task-status span {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.go-back {
+    background-color: rgb(4, 4, 103);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.go-back:hover {
+    background-color: blue;
+}
+
+
+form {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+form fieldset {
+    padding: 10px 30px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: 600;
+    background-color: crimson;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.home-btn {
+    margin-left: 60px;
+}
+
+.delete-btn {
+    background-color: rgb(130, 4, 4);
+}
+
+.messages {
+    margin: 0 60px;
+    padding: 5px 15px;
+    background-color: rgba(133, 248, 133, 0.3);
+}
+
+

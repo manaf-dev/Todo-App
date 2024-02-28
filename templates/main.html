@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Todo/style.css' %}">
+    <title>Todo-App</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo"><a href="{% url 'home' %}">Manaf.Dev</a></h2>
+        <div class="account">
+            {% if user.is_authenticated %}
+                <p>Hi, <a href="{% url 'profile' %}">{{ user.username }}</a></p>
+                <a href="{% url 'password_change' %}">Change Password</a>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            {%else%}
+                <a href="{% url 'login' %}">Sign in</a>
+            {%endif %}
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="messages">{{ message }}</div>
+                {% endfor %}
+            {%  endif %}
+            <p class="title">My Todo App</p>
+            
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+</body>
+</html>

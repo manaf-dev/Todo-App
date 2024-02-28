@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Delete Task</legend>
+        <p>Are you sure you want to delete Task: <em>{{task}}</em></p>
+
+        <button type="submit" class="delete-btn btn">Delete</button>
+        <a href="{{ request.META.HTTP_REFERER }}" class="go-back">Go back</a>
+
+    </fieldset>
+</form>
+
+
+{% endblock %}

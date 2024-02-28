@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="task-show">
+    <div>
+        <h3 class="task-title">Task: {{ task.title }}</h3>
+    </div>
+    <div>
+        <p class="task-desc">{{ task.description }}</p>
+    </div>
+    <div>
+        <p class="task-status"><span>Status:</span>       
+            {% if task.is_complete %}
+                Completed
+            {% else %}
+                Pending
+            {% endif %}
+        
+        </p>
+    </div>
+
+    <a href="{% url 'delete-task' pk=task.id %}" class="go-back delete-btn">Delete</a>
+    <a href="{% url 'home' %}" class="go-back">Go back</a>
+</div>
+
+
+
+{% endblock %}
