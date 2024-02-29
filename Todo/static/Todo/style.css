@@ -6,20 +6,36 @@
 }
 
 html {
-    background-color: wheat;
+    background-color: #CADCFC;
 }
 
 a {
     text-decoration: none;
-    color: #000
+    color: #000;
 }
 
 header {
-    background-color: aqua;
+    background-color: #00246B;
+    color: #fff;
     padding: 20px 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.logo a {
+    color: #fff;
+}
+
+header .account {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header .account p, .account a {
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 .container {
@@ -34,9 +50,9 @@ header {
 
 .title {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bolder;
-    color: crimson;
+    color: #00246B;
     margin-bottom: 10px;
 }
 
@@ -81,7 +97,7 @@ header {
 
 .task-list th {
     padding: 10px;
-    background-color: antiquewhite;
+    background-color: #CADCFC;
 }
 
 

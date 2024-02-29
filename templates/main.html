@@ -10,11 +10,10 @@
 </head>
 <body>
     <header>
-        <h2 class="logo"><a href="{% url 'home' %}">Manaf.Dev</a></h2>
+        <h1 class="logo"><a href="{% url 'home' %}">Manaf.Dev</a></h1>
         <div class="account">
             {% if user.is_authenticated %}
                 <p>Hi, <a href="{% url 'profile' %}">{{ user.username }}</a></p>
-                <a href="{% url 'password_change' %}">Change Password</a>
                 <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
                     <button type="submit">Logout</button>
