@@ -60,17 +60,17 @@ header {
     margin-top: 20px;
     border-radius: 7px;
     background-color: silver;
+    width: 85%;
 }
 
 .task-list .status-col, .task-list .action-col {
-    width: 20%;
     text-align: center;
 }
 
 
 
 .task-list .task-col {
-    width: 60%;
+    width: 50%;
     border-right: 1px solid gray;
 }
 
@@ -125,13 +125,13 @@ header {
 }
 
 
-form {
+.form {
     width: 60%;
     margin: auto;
     margin-top: 20px;
 }
 
-form fieldset {
+.form fieldset {
     padding: 10px 30px;
 }
 
@@ -162,3 +162,15 @@ form fieldset {
 }
 
 
+
+.action-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.action-col button {
+    width: 25px;
+    height: 25px;
+    border: none;
+}

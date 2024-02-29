@@ -12,7 +12,7 @@ class Task(models.Model):
 
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['is_complete', '-created_at']
 
     def __str__(self):
         return self.title
