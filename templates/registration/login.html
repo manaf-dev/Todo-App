@@ -1,11 +1,15 @@
 {% extends 'main.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<h2>Login</h2>
 <form action="" method="post">
     {% csrf_token %}
-    {{ form }}
-    <button type="submit">Login</button>
+    <fieldset>
+        <legend>Login</legend>
+        {{ form|crispy }}
+        <button type="submit" class="btn">Login</button>
+        <p class="login-text">Don't have an account? <a href="{% url 'signup' %}">Create one</a></p>
+        <p class="login-text">Forgot Password? <a href="{% url 'password_reset' %}">Reset</a></p>
+    </fieldset>
 </form>
-<p>Forgot Password? <a href="{% url 'password_reset' %}">Reset</a></p>
 {% endblock %}

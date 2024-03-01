@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-    <a href="{% url 'add-task' %}" class="btn home-btn">Add task</a>
+    <a href="{% url 'add-task' %}" class="btn">Add task</a>
     <table class="task-list" cellspacing="2">
         <tr class="table-heads">
             <th class="task-col">Tasks</th>

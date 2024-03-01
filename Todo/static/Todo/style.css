@@ -5,7 +5,7 @@
     font-family: 'poppins', sans-serif;
 }
 
-html {
+body {
     background-color: #CADCFC;
 }
 
@@ -14,38 +14,54 @@ a {
     color: #000;
 }
 
+a:hover {
+    text-decoration: none;
+    /* color: unset; */
+}
+
+p {
+    margin-bottom: 0;
+}
+
 header {
     background-color: #00246B;
     color: #fff;
-    padding: 20px 80px;
+    padding: 15px 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo a {
+.logo a, .logo {
     color: #fff;
+    margin-bottom: 0;
 }
 
 header .account {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
+    margin-bottom: 0;
 }
 
 header .account p, .account a {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fff;
+}
+
+header .home-text {
+    font-size: 1.5rem;
 }
 
 .container {
     background-color: white;
     margin: auto;
     width: 60%;
-    margin-top: 70px;
+    margin-top: 60px;
     margin-bottom: 70px;
     border-radius: 10px;
-    padding: 30px 0;
+    padding: 30px 60px;
 }
 
 .title {
@@ -76,18 +92,19 @@ header .account p, .account a {
     margin-top: 20px;
     border-radius: 7px;
     background-color: silver;
-    width: 85%;
+    width: 100%;
+    border-collapse: separate;
 }
+
 
 .task-list .status-col, .task-list .action-col {
     text-align: center;
 }
 
 
-
 .task-list .task-col {
     width: 50%;
-    border-right: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 .task-list td{
@@ -128,47 +145,73 @@ header .account p, .account a {
     font-weight: 600;
 }
 
-.go-back {
-    background-color: rgb(4, 4, 103);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 50px;
-    margin-top: 20px;
-}
-
-.go-back:hover {
-    background-color: blue;
-}
-
 
 .form {
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 20px;
 }
 
-.form fieldset {
-    padding: 10px 30px;
+form fieldset {
+    padding: 20px 30px;
+    border: 1px solid gray;
 }
 
-.btn {
-    font-size: 15px;
+form fieldset legend {
+    width: fit-content;
+}
+
+.back-btn {
+    background-color: unset;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 15px;
+    border-radius: 20px;
+    border: 1px solid green;
+    color: #000;
+}
+
+.back-btn:hover {
+    font-size: 20px;
     font-weight: 600;
-    background-color: crimson;
+    color: #000;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+.btn {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #025002;
     color: #fff;
     padding: 5px 20px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
-.home-btn {
-    margin-left: 60px;
+.btn:hover, .btn:active {
+    background-color: rgb(3, 164, 3);
+    color: #fff;
 }
+
 
 .delete-btn {
     background-color: rgb(130, 4, 4);
+}
+.delete-btn:hover {
+    background-color: rgb(188, 6, 6);
+}
+
+textarea {
+    height: 100px;
 }
 
 .messages {
@@ -189,4 +232,63 @@ header .account p, .account a {
     width: 25px;
     height: 25px;
     border: none;
+    cursor: pointer;
+}
+
+
+.profile-pic img {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.profile-pic-home img {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+
+li {
+    list-style: none;
+}
+
+.profile-drop {
+    background-color: rgb(82, 82, 249);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px 0 0 15px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+
+}
+
+.profile-pic-home:hover > .profile-drop, .profile-drop:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logout-btn {
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    padding-top: 5px;
+    color: #fff;
+}
+
+.logout-btn:active {
+    border: none;
+}
+
+.login-text {
+    padding-top: 15px;
+}
+
+.login-text a {
+    font-weight: 500;
 }

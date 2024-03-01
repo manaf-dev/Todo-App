@@ -5,23 +5,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{% static 'Todo/style.css' %}">
     <title>Todo-App</title>
 </head>
 <body>
     <header>
-        <h1 class="logo"><a href="{% url 'home' %}">Manaf.Dev</a></h1>
-        <div class="account">
+        <h2 class="logo"><a href="{% url 'home' %}">Manaf.Dev</a></h2>
+        <ul class="account">
             {% if user.is_authenticated %}
-                <p>Hi, <a href="{% url 'profile' %}">{{ user.username }}</a></p>
-                <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit">Logout</button>
-                </form>
+                <li class="profile-pic-home">
+                    <img src="{{ user.profile.image.url }}" alt="Profile">
+                    <ul class="profile-drop">
+                        <li>
+                            <li><a href="{% url 'profile' %}">View Profile</a></li>
+                            <form action="{% url 'logout' %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-btn">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li class="home-text">{{ user.username }}</li>
+                
             {%else%}
-                <a href="{% url 'login' %}">Sign in</a>
+                <a href="{% url 'login' %}" class="home-text">Sign in</a>
             {%endif %}
-        </div>
+        </ul>
     </header>
     <main>
         <div class="container">

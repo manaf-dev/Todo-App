@@ -9,9 +9,10 @@
     <fieldset>
         <legend>Add Task</legend>
         {{ form|crispy }}
-
-        <button type="submit" class="btn">Submit</button>
-        <a href="{% url 'home' %}" class="go-back">Go back</a>
+        <div class="buttons">
+            <button type="submit" class="btn">Add</button>
+            <a href="{% url 'home' %}" class="back-btn">Go back</a>
+        </div>
 
     </fieldset>
 

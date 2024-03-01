@@ -1,7 +1,9 @@
 {% extends 'main.html' %} 
 
 {% block content %}
-
+<div class="profile-pic">
+    <img src="{{ user.profile.image.url }}" alt="Profile">
+</div>
 <h2>{{ user.username }}'s Profile</h2>
 <a href="{% url 'password_change' %}">Change Password</a>
 
