@@ -1,11 +1,24 @@
 {% extends 'main.html' %} 
+{% load crispy_forms_tags %}
 
 {% block content %}
+
 <div class="profile-pic">
     <img src="{{ user.profile.image.url }}" alt="Profile">
 </div>
-<h2>{{ user.username }}'s Profile</h2>
-<a href="{% url 'password_change' %}">Change Password</a>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>{{ user.username }}'s Profile</legend>
+        {{ user_form|crispy }}
+        {{ profile_form|crispy }}
+        <button type="submit" class="btn">Update</button>
+        <a href="{% url 'home' %}" class="back-btn">Home</a>
+        <p class="login-text"><a href="{% url 'password_change' %}">Change Password</a></p>
+    </fieldset>
+</form>
+
 
 
 {% endblock %}

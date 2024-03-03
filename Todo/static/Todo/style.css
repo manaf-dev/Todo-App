@@ -159,6 +159,7 @@ form fieldset {
 
 form fieldset legend {
     width: fit-content;
+    padding: 0 8px;
 }
 
 .back-btn {
@@ -237,7 +238,7 @@ textarea {
 
 
 .profile-pic img {
-    border: 1px solid #fff;
+    border: 1px solid #000;
     border-radius: 50%;
     height: 100px;
     width: 100px;
@@ -265,7 +266,6 @@ li {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
-
 }
 
 .profile-pic-home:hover > .profile-drop, .profile-drop:hover {
@@ -277,11 +277,11 @@ li {
     border: none;
     background-color: unset;
     cursor: pointer;
-    padding-top: 5px;
+    margin-top: 5px;
     color: #fff;
 }
 
-.logout-btn:active {
+.logout-btn:active, .logout-btn:hover {
     border: none;
 }
 
