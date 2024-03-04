@@ -12,27 +12,29 @@
 </head>
 <body>
     <header>
-        <h2 class="logo"><a href="{% url 'home' %}">Manaf.Dev</a></h2>
-        <ul class="account">
-            {% if user.is_authenticated %}
-                <li class="profile-pic-home">
-                    <img src="{{ user.profile.image.url }}" alt="Profile">
-                    <ul class="profile-drop">
-                        <li>
-                            <li><a href="{% url 'profile' %}">View Profile</a></li>
-                            <form action="{% url 'logout' %}" method="post">
-                                {% csrf_token %}
-                                <button type="submit" class="logout-btn">Logout</button>
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-                <li class="home-text">{{ user.username }}</li>
-                
-            {%else%}
-                <a href="{% url 'login' %}" class="home-text">Sign in</a>
-            {%endif %}
-        </ul>
+        <div class="bar">
+            <h2 class="logo"><a href="{% url 'home' %}">DeDo</a></h2>
+            <ul class="account">
+                {% if user.is_authenticated %}
+                    <li class="profile-pic-home">
+                        <img src="{{ user.profile.image.url }}" alt="Profile">
+                        <ul class="profile-drop">
+                            <li>
+                                <li><a href="{% url 'profile' %}">View Profile</a></li>
+                                <form action="{% url 'logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="logout-btn">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="home-text">{{ user.username }}</li>
+                    
+                {%else%}
+                    <a href="{% url 'login' %}" class="home-text">Sign in</a>
+                {%endif %}
+            </ul>
+        </div>
     </header>
     <main>
         <div class="container">
@@ -41,7 +43,12 @@
                     <div class="messages">{{ message }}</div>
                 {% endfor %}
             {%  endif %}
-            <p class="title">My Todo App</p>
+
+            {% if user.is_authenticated %}
+                <p class="title">Your Todo List</p>
+            {% else%}
+                <p class="title">Welcome to DeDo</p>
+            {% endif%}
             
             {% block content %}
             {% endblock %}
