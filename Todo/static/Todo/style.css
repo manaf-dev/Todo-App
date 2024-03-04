@@ -59,6 +59,7 @@ header .account p, .account a {
 
 header .home-text {
     font-size: 1.5rem;
+    color: #dad8d8;
 }
 
 .container {
@@ -255,6 +256,7 @@ textarea {
 }
 
 .profile-pic-home img {
+    background-color: #fff;
     border: 1px solid #fff;
     border-radius: 50%;
     height: 40px;
@@ -311,7 +313,11 @@ li {
     }
 
     header .home-text {
-        font-size: 1.2rem;
+        display: none;
+    }
+
+    .profile-drop{
+        margin-left: -50px;
     }
 
     .container {
