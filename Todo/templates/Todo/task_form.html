@@ -11,7 +11,7 @@
         {{ form|crispy }}
         <div class="buttons">
             <button type="submit" class="btn">Submit</button>
-            <a href="{% url 'home' %}" class="back-btn">Back</a>
+            <a href="{{ request.META.HTTP_REFERER }}" class="back-btn">Back</a>
         </div>
 
     </fieldset>
