@@ -293,8 +293,9 @@ li {
     color: #fff;
 }
 
-.logout-btn:active, .logout-btn:hover {
+.logout-btn:focus, .logout-btn:hover {
     border: none;
+    outline: none;
 }
 
 .login-text {
